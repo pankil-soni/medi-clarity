@@ -13,42 +13,30 @@ export const siteConfig = {
       href: "/upload",
     },
     {
+      label: "Examples",
+      href: "/examples",
+    },
+    {
       label: "About",
       href: "/about",
     },
   ],
   navMenuItems: [
     {
-      label: "Profile",
-      href: "/profile",
+      label: "Home",
+      href: "/",
     },
     {
-      label: "Dashboard",
-      href: "/dashboard",
+      label: "Upload",
+      href: "/upload",
     },
     {
-      label: "Projects",
-      href: "/projects",
+      label: "Examples",
+      href: "/examples",
     },
     {
-      label: "Team",
-      href: "/team",
-    },
-    {
-      label: "Calendar",
-      href: "/calendar",
-    },
-    {
-      label: "Settings",
-      href: "/settings",
-    },
-    {
-      label: "Help & Feedback",
-      href: "/help-feedback",
-    },
-    {
-      label: "Logout",
-      href: "/logout",
+      label: "About",
+      href: "/about",
     },
   ],
   links: {

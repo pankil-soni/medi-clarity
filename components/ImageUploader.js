@@ -77,7 +77,7 @@ export default function ImageUploader() {
           transition={{ duration: 0.5 }}
           className="max-w-3xl mx-auto"
         >
-          <Card className="w-full bg-gradient-to-br from-pink-400 to-purple-400 text-white shadow-xl">
+          <Card className="w-full bg-gradient-to-br from-purple-400 to-pink-400 text-white shadow-xl">
             <CardBody>
               <h2 className="text-3xl font-bold mb-6 text-center">
                 Analyze Your Medical Document
