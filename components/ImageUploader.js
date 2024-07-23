@@ -35,9 +35,10 @@ export default function ImageUploader() {
     const formData = new FormData();
     formData.append("image", file);
 
+    console.log("url", process.env.BACKEND_URL);
     try {
       const response = await fetch(
-        "https://mediclarity-backend.onrender.com/analyze_prescription",
+        `${process.env.BACKEND_URL}/analyze_prescription`,
         {
           method: "POST",
           body: formData,

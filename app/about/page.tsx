@@ -42,7 +42,7 @@ const About = () => {
               icon: FiShield,
               title: "Privacy First",
               description:
-                "Your data is encrypted and never stored, ensuring your medical information remains confidential.",
+                "Your data is never stored, ensuring your medical information remains confidential.",
             },
             {
               icon: FiClock,
@@ -103,7 +103,7 @@ const About = () => {
                 <p
                   className={`${theme === "dark" ? "text-gray-300" : "text-gray-700"}`}
                 >
-                  This is an example of how MediClarity interprets{" "}
+                  This is an example of MediClarity's {" "}
                   {example.title.toLowerCase()}. Our AI provides clear
                   explanations of dosages, medical terms, and next steps.
                 </p>
@@ -154,12 +154,9 @@ const About = () => {
         <ul className={`list-disc pl-6 space-y-4`}>
           <li>End-to-end encryption for all uploaded documents</li>
           <li>No storage of analyzed documents or results</li>
-          <li>
-            Compliance with HIPAA and other relevant data protection regulations
-          </li>
           <li>Regular security audits and updates</li>
         </ul>
-        <p className="text-lg ">
+        <p className="text-lg mt-6">
           Your trust is our top priority, and we're committed to maintaining the
           highest standards of data protection.
         </p>
@@ -184,7 +181,7 @@ const About = () => {
             Collaboration tools for sharing results with healthcare providers
           </li>
         </ul>
-        <p className="text-lg">
+        <p className="text-lg mt-6">
           Stay tuned for these upcoming features that will make MediClarity an
           even more powerful tool for your health management.
         </p>
