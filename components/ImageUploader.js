@@ -37,7 +37,7 @@ export default function ImageUploader() {
 
     try {
       const response = await fetch(
-        `https://medi-clarity-backend.vercel.app/analyze_prescription`,
+        `https://medi-clarity-backend.onrender.com/analyze_prescription`,
         {
           method: "POST",
           body: formData,
