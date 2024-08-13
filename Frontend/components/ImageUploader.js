@@ -37,7 +37,7 @@ export default function ImageUploader() {
 
     try {
       const response = await fetch(
-        `https://medi-clarity-backend.onrender.com/analyze_prescription`,
+        `BACKEND_URL/analyze_prescription`,
         {
           method: "POST",
           body: formData,
