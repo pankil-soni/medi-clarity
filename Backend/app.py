@@ -4,10 +4,15 @@ import openai
 import base64
 import io
 from flask_cors import CORS
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+api_key = os.getenv("OPENAI_API_KEY")
 
 app = Flask(__name__)
 CORS(app, origins="*", methods=["GET", "POST"], allow_headers=["Content-Type"])
-openai.api_key = "REMOVED"
+openai.api_key = api_key
 
 initial_prompt = """
 ## YOUR TASK
