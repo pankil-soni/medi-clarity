@@ -37,7 +37,7 @@ export default function ImageUploader() {
 
     try {
       const response = await fetch(
-        `BACKEND_URL/analyze_prescription`,
+        `http://localhost:5000/analyze_prescription`,
         {
           method: "POST",
           body: formData,
