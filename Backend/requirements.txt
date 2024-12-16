@@ -3,3 +3,4 @@ openai
 flask_cors
 gunicorn
 pillow
+python-dotenv

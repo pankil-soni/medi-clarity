@@ -31,7 +31,7 @@ initial_prompt = """
 
 def convert_image_to_base64(image_file):
     with Image.open(image_file) as img:
-        rgb_img = img.convert('RGB')
+        rgb_img = img.convert("RGB")
         buffered = io.BytesIO()
         rgb_img.save(buffered, format="JPEG")
         base64_encoded_image = base64.b64encode(buffered.getvalue())
@@ -42,41 +42,41 @@ def convert_image_to_base64(image_file):
 def get_gpt4_response(messages):
 
     response = openai.chat.completions.create(
-        model="gpt-4o",
-        temperature=0.7,
-        messages=messages
+        model="gpt-4o", temperature=0.7, messages=messages
     )
 
     return response.choices[0].message.content
 
 
-@app.route('/', methods=['GET'])
+@app.route("/", methods=["GET"])
 def hello():
     return "Hello, World!"
 
 
-@app.route('/analyze_prescription', methods=['POST'])
+@app.route("/analyze_prescription", methods=["POST"])
 def analyze_prescription():
-    if 'image' not in request.files:
+    if "image" not in request.files:
         return jsonify({"error": "No image file provided"}), 400
 
-    image_file = request.files['image']
-    if image_file.filename == '':
+    image_file = request.files["image"]
+    if image_file.filename == "":
         return jsonify({"error": "No selected file"}), 400
 
     base64_string = convert_image_to_base64(image_file)
     base64url = f"data:image/jpeg;base64,{base64_string}"
 
     messages = [
-        {"role": "system", "content": "You are a helpful Medical Assistant who is assisting a patient with understanding their doctor's prescription/reports."},
-        {"role": "user",
-         "content": initial_prompt + base64url}
+        {
+            "role": "system",
+            "content": "You are a helpful Medical Assistant who is assisting a patient with understanding their doctor's prescription/reports.",
+        },
+        {"role": "user", "content": initial_prompt + base64url},
     ]
 
     gpt_response = get_gpt4_response(messages)
 
-    return Response(gpt_response, mimetype='text/plain')
+    return Response(gpt_response, mimetype="text/plain")
 
 
-if __name__ == '__main__':
-    app.run()
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=8000)
